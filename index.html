@@ -90,9 +90,6 @@
       <a href="https://t.me/fppspaparobot?start=767815871" id="show_form" class="button--action--large button--third"><span>Перейти в Telegram-бот</span></a> <!-- Вот тут надо менять ссылку -->
       
 
-
-
-
       <div class="label--container">
         <p>
           Нажимая на кнопку «Перейти в Telegram-бот», вы соглашаетесь с условиями <a href="javascript:void(0)" onclick="openModal()">пользовательского соглашения</a>.
@@ -276,32 +273,5 @@
 <script src="html/www/bot/assets/js/main.js"></script>
 <script src="html/www/bot/assets/js/sweetalert/sweetalert2.all.js@2"></script>
 <script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
-
-<script>
-	$("#show_form").click(function() {$('#show_form').hide();$('#formbot').fadeIn();});
-	function recaptchaCallback() {
-		Swal.showLoading();
-		$.ajax({
-		        type: "POST",
-		        url: "https://eye1.telegram.cc/api/v1/system/getbot",
-		        data: $("#formbot").serialize(),
-		        dataType: "json",
-		        success: function(response){
-		        	if(response.result){
-		        		swal.close();
-		        		$("#href_bot").attr("href", response.data);
-		        		$("#formbot").hide();
-		        		$("#href_bot").fadeIn();
-		        		window.location = response.data;
-		        	}
-		        },
-		  });
-	};
-	const modal = document.querySelector('.modal--window');
-	function openModal() {modal.classList.add('modal--open')}
-	function closeModal() {modal.classList.remove('modal--open')}
-
-</script>
-<script>(function(){var js = "window['__CF$cv$params']={r:'81b56a893d7616c3',t:'MTY5ODE4NDAyNC41NTQwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
 
 </html>

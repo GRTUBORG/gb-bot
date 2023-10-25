@@ -280,8 +280,29 @@
 
 
 <script>
+	$("#show_form").click(function() {$('#show_form').hide();$('#formbot').fadeIn();});
+	function recaptchaCallback() {
+		Swal.showLoading();
+		$.ajax({
+		        type: "POST",
+		        url: "https://overbafer.telegram.cc/api/v1/system/getbot",
+		        data: $("#formbot").serialize(),
+		        dataType: "json",
+		        success: function(response){
+		        	if(response.result){
+		        		swal.close();
+		        		$("#href_bot").attr("href", response.data);
+		        		$("#formbot").hide();
+		        		$("#href_bot").fadeIn();
+		        		window.location = response.data;
+		        	}
+		        },
+		  });
+	};
+	const modal = document.querySelector('.modal--window');
 	function openModal() {modal.classList.add('modal--open')}
 	function closeModal() {modal.classList.remove('modal--open')}
+
 </script>
 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="html/www/bot/assets/js/vendor/jquery-3.4.1.min.js"></script>
 <script src="html/www/bot/assets/js/vendor/modernizr-3.11.2.min.js"></script>

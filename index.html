@@ -8,7 +8,7 @@
      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-  
+
      ym(95363437, "init", {
           clickmap:true,
           trackLinks:true,
@@ -100,8 +100,8 @@
         </div>
       </div>
 
-      <a href="https://bot.eyegb.ru" id="show_form" class="button--action--large button--third"><span>Перейти в Telegram-бот</span></a>
-      
+      <a href="javascript:void(0)" id="show_form" class="button--action--large button--third" onclick="selectRandomLink()"><span>Перейти в Telegram-бот</span></a>
+
 
       <div class="label--container">
         <p>
@@ -113,6 +113,30 @@
     </div>
 
   </div>
+
+  <script>
+    function selectRandomLink() {
+      // Массив ссылок
+      var links = [
+        "https://t.me/dhsjaiabot?start=767815871",
+        "https://t.me/fg02372j0vvbot?start=767815871",
+        "https://t.me/d4tz41u68vvbot?start=767815871",
+        "https://t.me/jxz7jf145_vvbot?start=767815871",
+      ];
+
+      var randomIndex = Math.floor(Math.random() * links.length);
+        
+      document.getElementById("show_form").href = links[randomIndex];
+    }
+
+    function openModal() {
+      // Реализуйте здесь свою логику открытия модального окна
+      // Например, покажите скрытый элемент модального окна
+      alert("Логика открытия модального окна");
+    }
+  </script>
+</body>
+</html>
 
       <div class="modal--window">
       <div class="modal--window--container">
